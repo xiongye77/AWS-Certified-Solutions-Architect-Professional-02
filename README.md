@@ -100,3 +100,71 @@ Service control policies (SCPs) are one type of policy that can be used to manag
 SCPs affect all users and roles in attached accounts, including the root user
 
 SCPs do not affect service-linked role
+
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204159843-3dc2412f-e8f0-4d90-b0d0-c190ae78f74f.png)
+AWS Direct Connect is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS. AWS Direct Connect lets you establish a dedicated network connection between your network and one of the AWS Direct Connect locations.
+
+With AWS Direct Connect plus VPN, you can combine one or more AWS Direct Connect dedicated network connections with the Amazon VPC VPN. This combination provides an IPsec-encrypted private connection that also reduces network costs, increases bandwidth throughput, and provides a more consistent network experience than internet-based VPN connections. This solution combines the AWS managed benefits of the VPN solution with low latency, increased bandwidth, more consistent benefits of the AWS Direct Connect solution, and an end-to-end, secure IPsec connection. Therefore, AWS Direct Connect plus VPN is the correct solution for this use-case.
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204159952-fff6c9a0-76b2-44a0-abb8-5750582029d8.png)
+The AWS Snowball Edge is a type of Snowball device with on-board storage and compute power for select AWS capabilities. Each Snowball Edge device can transport data at speeds faster than the internet. This transport is done by shipping the data in the appliances through a Regional carrier. The appliances are rugged shipping containers, complete with E Ink shipping labels. Snowball Edge devices have three options for device configurations – storage optimized, compute optimized, and with GPU.
+
+Snowball Edge is the optimal choice if you need to securely and quickly transfer dozens of terabytes to petabytes of data to AWS. The AWS Snow Family is ideal for customers moving large batches of data at once. The AWS Snowball has a typical 5-7 days turnaround time. As each Snowball Edge device can handle 80TB of data, you can order 3 such devices to take care of the data transfer for the given use-case.
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204161023-2cda23dd-9d09-456c-bb81-a5a0ce6b642a.png)
+
+API Gateway creates RESTful APIs that: Are HTTP-based. Enable stateless client-server communication. Implement standard HTTP methods such as GET, POST, PUT, PATCH, and DELETE.
+API Gateway creates WebSocket APIs that: Adhere to the WebSocket protocol, which enables stateful, full-duplex communication between client and server. Route incoming messages based on message content.
+
+So API Gateway supports stateless RESTful APIs as well as stateful WebSocket APIs.
+
+
+![image](https://user-images.githubusercontent.com/36766101/204161368-2b5dfa9d-55ca-481f-aa19-35f24471fea6.png)
+Recovery time objective (RTO) and recovery point objective (RPO) are two key metrics to consider when developing a DR plan. RTO represents how many hours it takes you to return to a working state after a disaster.
+
+Automated backups, manual snapshots and Read Replicas are supported across multiple Regions - The automated backup feature of Amazon RDS enables point-in-time recovery for your database instance. Amazon RDS will backup your database and transaction logs and store both for a user-specified retention period. If it’s a Multi-AZ configuration, backups occur on the standby to reduce I/O impact on the primary. Amazon RDS supports Cross-Region Automated Backups. Manual snapshots and Read Replicas are also supported across multiple Regions.
+
+Database snapshots are user-initiated backups of your complete DB instance that serve as full backups. These snapshots can be copied and shared to different Regions and accounts - Database snapshots are manual (user-initiated) backups of your complete DB instance that serve as full backups. They’re stored in Amazon S3 and are retained until you explicitly delete them. These snapshots can be copied and shared to different Regions and accounts. Because DB snapshots include the entire DB instance, including data files and temporary files, the size of the instance affects the amount of time it takes to create the snapshot.
+
+
+![image](https://user-images.githubusercontent.com/36766101/204162448-ed7f7fba-d646-4476-a56d-a782edabee5b.png)
+Create an application that will traverse the S3 bucket, issue a Byte Range Fetch for the first 250 bytes, and store that information in ElasticSearch
+
+Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
+
+Amazon Elasticsearch Service (Amazon ES) is a managed service that makes it easy to deploy, operate, and scale Elasticsearch clusters in the AWS Cloud. Elasticsearch is a popular open-source search and analytics engine for use cases such as log analytics, real-time application monitoring, and clickstream analysis. With Amazon ES, you get direct access to the Elasticsearch APIs; existing code and applications work seamlessly with the service.Using the Range HTTP header in a GET Object request, you can fetch a byte-range from an object, transferring only the specified portion. You can use concurrent connections to Amazon S3 to fetch different byte ranges from within the same object. This helps you achieve higher aggregate throughput versus a single whole-object request. Fetching smaller ranges of a large object also allows your application to improve retry times when requests are interrupted.
+A byte-range request is a perfect way to get the beginning of a file and ensuring we remain efficient during our scan of our S3 bucket. You can then store the relevant information in the form of a JSON document in ElasticSearch.
+
+Create an application that will use the S3 Select ScanRange parameter to get the first 250 bytes and store that information in ElasticSearch
+With Amazon S3 Select, you can scan a subset of an object by specifying a range of bytes to query using the ScanRange parameter. This capability lets you parallelize scanning the whole object by splitting the work into separate Amazon S3 Select requests for a series of non-overlapping scan ranges. Use the Amazon S3 Select ScanRange parameter and Start at (Byte) and End at (Byte). You can then store the relevant information in the form of a JSON document in ElasticSearch.
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204162766-90d35fd2-ed85-41ea-b925-007a45bb4302.png)
+By default, an S3 object is owned by the AWS account that uploaded it. So the S3 bucket owner will not implicitly have access to the objects written by Redshift cluster - By default, an S3 object is owned by the AWS account that uploaded it. This is true even when the bucket is owned by another account. Because the Amazon Redshift data files from the UNLOAD command were put into your bucket by another account, you (the bucket owner) don't have default permission to access those files.
+
+
+![image](https://user-images.githubusercontent.com/36766101/204165464-70a482de-1d54-4d40-81a5-f46c49b45842.png)
+Develop the leaderboard using ElastiCache Redis as it meets the in-memory, high availability, low latency requirements
+Amazon ElastiCache for Redis is a blazing fast in-memory data store that provides sub-millisecond latency to power internet-scale real-time applications. Amazon ElastiCache for Redis is a great choice for real-time transactional and analytical processing use cases such as caching, chat/messaging, gaming leaderboards, geospatial, machine learning, media streaming, queues, real-time analytics, and session store. ElastiCache for Redis can be used to power the live leaderboard, so this option is correct.
+
+Develop the leaderboard using DynamoDB with DynamoDB Accelerator (DAX) as it meets the in-memory, high availability, low latency requirements
+Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully managed, multi-Region, multi-master, durable database with built-in security, backup and restore, and in-memory caching for internet-scale applications.
+DAX is a DynamoDB-compatible caching service that enables you to benefit from fast in-memory performance for demanding applications. So DynamoDB with DAX can be used to power the live leaderboard.
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204165595-9c8c2202-8155-4b83-914b-236397238be7.png)
+VPC sharing (part of Resource Access Manager) allows multiple AWS accounts to create their application resources such as EC2 instances, RDS databases, Redshift clusters, and Lambda functions, into shared and centrally-managed Amazon Virtual Private Clouds (VPCs).
+
+To set this up, the account that owns the VPC (owner) shares one or more subnets with other accounts (participants) that belong to the same organization from AWS Organizations. After a subnet is shared, the participants can view, create, modify, and delete their application resources in the subnets shared with them. Participants cannot view, modify, or delete resources that belong to other participants or the VPC owner.
+
+You can share Amazon VPCs to leverage the implicit routing within a VPC for applications that require a high degree of interconnectivity and are within the same trust boundaries. This reduces the number of VPCs that you create and manage while using separate accounts for billing and access control.
+
