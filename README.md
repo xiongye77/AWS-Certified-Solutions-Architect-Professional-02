@@ -1,5 +1,8 @@
 # AWS-Certified-Solutions-Architect-Professional-02
 
+
+![image](https://user-images.githubusercontent.com/36766101/204118816-da3ef40b-633b-4a31-aed0-79b2e052e0ad.png)
+
 Amazon SNS message deliveries to AWS Lambda have crossed the account concurrency quota for Lambda, so the team needs to contact AWS support to raise the account limit
 Amazon Simple Notification Service (SNS) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications.
 AWS Lambda currently supports 1000 concurrent executions per AWS account per region. If your Amazon SNS message deliveries to AWS Lambda contribute to crossing these concurrency quotas, your Amazon SNS message deliveries will be throttled. You need to contact AWS support to raise the account limit.
@@ -29,6 +32,7 @@ You can further use an S3 bucket policy to indicate which VPCs and which VPC End
 ![image](https://user-images.githubusercontent.com/36766101/204116046-d66939fd-35b0-4c93-8d70-6a7a3eaeef3d.png)
 
 
+![image](https://user-images.githubusercontent.com/36766101/204118846-16ce4011-6c9e-4268-8d71-8e3959080491.png)
 
 Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics tools. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, transform, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.
 When a Kinesis data stream is configured as the source of a Firehose delivery stream, Firehose’s PutRecord and PutRecordBatch operations are disabled and Kinesis Agent cannot write to Firehose delivery stream directly. Data needs to be added to the Kinesis data stream through the Kinesis Data Streams PutRecord and PutRecords operations instead. Therefore, this option is correct.
@@ -85,6 +89,8 @@ An instance store (also known as ephemeral storage) provides temporary block-lev
 
 As Instance Store based volumes provide high random I/O performance at low cost (as the storage is part of the instance's usage cost) and the fault-tolerant architecture can adjust for the loss of any instance, therefore you should use Instance Store based EC2 instances for this use-case.
 
+
+![image](https://user-images.githubusercontent.com/36766101/204118823-ee1cca41-713b-4820-860e-1a57efb7f212.png)
 
 
 If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable SCPs, the user or role can't perform that action.
