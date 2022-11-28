@@ -249,10 +249,17 @@ The combination of DataSync and File Gateway is the correct solution. AWS DataSy
 
 
 
+![image](https://user-images.githubusercontent.com/36766101/204168218-a3b527f9-4a05-4f7e-9805-11013ca31064.png)
 
+Create separate cache behaviors for static and dynamic content. Remove the Date HTTP header from the whitelist headers section on both of the cache behaviors. Remove the session cookie from the whitelist cookies section for static content as well as the Authorization HTTP header from the whitelist headers section for cache behavior configured for static content
 
+CloudFront is a web service that speeds up the distribution of your static and dynamic web content by routing each user request through the AWS backbone network to the edge location that can best serve your content.
 
+One of the purposes of using CloudFront is to reduce the number of requests that your origin server must respond to directly. With CloudFront caching, more objects are served from CloudFront edge locations, which are closer to your users. This reduces the load on your origin server and reduces latency. The proportion of requests that are served from caches to all requests is called the cache hit ratio.
 
+To improve the cache hit ratio when CloudFront is configured to cache based on cookie values you should create separate cache behaviors for static and dynamic content, and configure CloudFront to forward cookies to your origin only for dynamic content. So, for the given use-case, you should remove the session cookie from the whitelist cookies section for static content.
+
+To improve the cache hit ratio when CloudFront is configured to cache based on request headers, you should set up CloudFront to forward and cache based on only specified headers instead of forwarding and caching based on all headers. So, you can remove Authorization HTTP header from the whitelist headers section for cache behavior configured for static content. In addition, AWS recommends not to configure caching based on values in the Date and User-Agent headers, because these headers have numerous possible values and caching based on their values could cause CloudFront to forward significantly more requests to your origin.
 
 
 
