@@ -188,3 +188,71 @@ Since Lambda functions can scale extremely quickly, this means you should have c
 
 
 
+![image](https://user-images.githubusercontent.com/36766101/204167132-3c1ed1db-67b3-4c21-9e2b-9ef4127a49ce.png)
+Create a snapshot copy grant in the destination Region for a KMS key in the destination Region. Configure Redshift cross-Region snapshots in the source Region
+
+To copy snapshots for AWS KMS–encrypted clusters to another AWS Region, you need to create a grant for Redshift to use a KMS customer master key (CMK) in the destination AWS Region. Then choose that grant when you enable copying of snapshots in the source AWS Region. You cannot use a KMS key from the source Region as AWS KMS keys are specific to an AWS Region.
+![image](https://user-images.githubusercontent.com/36766101/204167193-16354f79-d2f9-470d-9fda-c611a0af4c44.png)
+
+
+![image](https://user-images.githubusercontent.com/36766101/204167216-72e9b1dd-344c-43fe-bb51-c1a4e761177f.png)
+AWS WAF is a web application firewall that helps protect your web applications or APIs against common web exploits that may affect availability, compromise security, or consume excessive resources. AWS WAF gives you control over how traffic reaches your applications by enabling you to create security rules that block common attack patterns and rules that filter out specific traffic patterns you define.
+
+You can deploy AWS WAF on Amazon CloudFront as part of your CDN solution, the Application Load Balancer that fronts your web servers or origin servers running on EC2, or Amazon API Gateway for your APIs.
+
+To block specific countries, you can create a WAF geo match statement listing the countries that you want to block, and to allow traffic from IPs of the remote development team, you can create a WAF IP set statement that specifies the IP addresses that you want to allow through. 
+
+
+![image](https://user-images.githubusercontent.com/36766101/204167327-d26369b1-f0bf-44d0-a38d-d170c3f8f92c.png)
+Set up Kinesis Data Firehose in the logging account and then subscribe the delivery stream to CloudWatch Logs streams in each application AWS account via subscription filters. Persist the log data in an Amazon S3 bucket inside the logging AWS account
+
+You can configure Amazon Kinesis Data Firehose to aggregate and collate CloudWatch Logs from different AWS accounts and receive their log events in a centralized logging AWS Account (this is known as cross-account data sharing) by using a CloudWatch Logs destination and then creating a Subscription Filter. This log event data can be read from a centralized Amazon Kinesis Firehose delivery stream to perform downstream processing and analysis.
+
+You can collaborate with an owner of a different AWS account and receive their log events on your AWS resources, such as an Amazon Kinesis or Amazon Kinesis Data Firehose stream (this is known as cross-account data sharing). You can use a subscription filter with Kinesis Streams, Lambda, or Kinesis Data Firehose. Logs that are sent to a receiving service through a subscription filter are Base64 encoded and compressed with the gzip format.
+
+
+![image](https://user-images.githubusercontent.com/36766101/204167398-f8a49d00-c1d5-47a9-81ba-0ae5cb7c2b3e.png)
+Set up DynamoDB Streams to capture and send updates to a Lambda function that outputs records to Kinesis Data Analytics (KDA) via Kinesis Data Streams (KDS). Detect and analyze anomalies in KDA and send notifications via SNS
+
+A DynamoDB stream is an ordered flow of information about changes to items in a DynamoDB table. When you enable a stream on a table, DynamoDB captures information about every modification to data items in the table for up to 24 hours.
+
+Whenever an application creates, updates, or deletes items in the table, DynamoDB Streams writes a stream record with the primary key attributes of the items that were modified. A stream record contains information about a data modification to a single item in a DynamoDB table.
+
+DynamoDB Streams supports the following stream record views:
+
+KEYS_ONLY — Only the key attributes of the modified item NEW_IMAGE — The entire item, as it appears after it was modified OLD_IMAGE — The entire item, as it appears before it was modified NEW_AND_OLD_IMAGES — Both the new and the old images of the item
+
+You can process DynamoDB streams in multiple ways. The most common approaches use AWS Lambda or a standalone application that uses the Kinesis Client Library (KCL) with the DynamoDB Streams Kinesis Adapter. The KCL is a client-side library that provides an interface to process DynamoDB stream changes. If you enable DynamoDB Streams on a table, you can associate the stream Amazon Resource Name (ARN) with an AWS Lambda function that you write. Immediately after an item in the table is modified, a new record appears in the table's stream. AWS Lambda polls the stream and invokes your Lambda function synchronously when it detects new stream records.
+![image](https://user-images.githubusercontent.com/36766101/204167547-bf4d04db-7d61-43d9-964e-cd99920f8d66.png)
+For the given use-case, you can use a Lambda function to capture updates from DynamoDB Streams and send those records to KDA via KDS. You can then detect and analyze anomalies in KDA and send notifications via SNS.
+![image](https://user-images.githubusercontent.com/36766101/204167675-caedd8c9-f016-473f-978a-3539eacc4d89.png)
+
+It is important to note that Kinesis Data Analytics (KDA) only supports the following streaming sources for an application:
+A Kinesis data stream (KDS)
+A Kinesis Data Firehose (KDF) delivery stream
+Therefore, you cannot directly write the output of the records from a Lambda function to KDA, although you can certainly use a Lambda function to pre-process the incoming stream from either KDS or KDF.
+
+
+![image](https://user-images.githubusercontent.com/36766101/204167906-5be59dbe-8fe1-4fdf-a21b-8789b95e0849.png)
+AWS DataSync is an online data transfer service that simplifies, automates, and accelerates copying large amounts of data to and from AWS storage services over the internet or AWS Direct Connect. AWS DataSync fully automates and accelerates moving large active datasets to AWS, up to 10 times faster than command-line tools. It is natively integrated with Amazon S3, Amazon EFS, Amazon FSx for Windows File Server, Amazon CloudWatch, and AWS CloudTrail, which provides seamless and secure access to your storage services, as well as detailed monitoring of the transfer.
+
+DataSync uses a purpose-built network protocol and scale-out architecture to transfer data. A single DataSync agent is capable of saturating a 10 Gbps network link. DataSync fully automates the data transfer. It comes with retry and network resiliency mechanisms, network optimizations, built-in task scheduling, monitoring via the DataSync API and Console, and CloudWatch metrics, events, and logs that provide granular visibility into the transfer process. DataSync performs data integrity verification both during the transfer and at AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. The service provides three different types of gateways – Tape Gateway, File Gateway, and Volume Gateway – that seamlessly connect on-premises applications to cloud storage, caching data locally for low-latency access. File gateway offers SMB or NFS-based access to data in Amazon S3 with local caching.
+
+The combination of DataSync and File Gateway is the correct solution. AWS DataSync enables you to automate and accelerate online data transfers to AWS storage services. File Gateway then provides your on-premises applications with low latency access to the migrated data.the end of the transfer.
+![image](https://user-images.githubusercontent.com/36766101/204168003-d6a41bfe-ff6b-413b-9a1f-db49a243da48.png)
+![image](https://user-images.githubusercontent.com/36766101/204168028-fcb663ec-71d4-4b64-9dbc-43fb75a6bc19.png)
+
+
+AWS Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. The service provides three different types of gateways – Tape Gateway, File Gateway, and Volume Gateway – that seamlessly connect on-premises applications to cloud storage, caching data locally for low-latency access. File gateway offers SMB or NFS-based access to data in Amazon S3 with local caching.
+
+The combination of DataSync and File Gateway is the correct solution. AWS DataSync enables you to automate and accelerate online data transfers to AWS storage services. File Gateway then provides your on-premises applications with low latency access to the migrated data.
+
+
+
+
+
+
+
+
+
+
