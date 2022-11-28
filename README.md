@@ -262,4 +262,25 @@ To improve the cache hit ratio when CloudFront is configured to cache based on c
 To improve the cache hit ratio when CloudFront is configured to cache based on request headers, you should set up CloudFront to forward and cache based on only specified headers instead of forwarding and caching based on all headers. So, you can remove Authorization HTTP header from the whitelist headers section for cache behavior configured for static content. In addition, AWS recommends not to configure caching based on values in the Date and User-Agent headers, because these headers have numerous possible values and caching based on their values could cause CloudFront to forward significantly more requests to your origin.
 
 
+![image](https://user-images.githubusercontent.com/36766101/204168763-11e1ca54-c926-4fb5-80b8-3970182ef41b.png)
+Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS offers two types of message queues - Standard queues vs FIFO queues.
+
+For FIFO queues, the order in which messages are sent and received is strictly preserved (i.e. First-In-First-Out). On the other hand, the standard SQS queues offer best-effort ordering. This means that occasionally, messages might be delivered in an order different from which they were sent.
+
+By default, FIFO queues support up to 300 transactions (API calls) per second (300 send, receive, or delete operations per second). When you batch 10 transactions per operation (maximum), FIFO queues can support up to 3,000 (30010) transactions per second. Therefore, you need to process 8 transactions per operation so that the FIFO queue can support up to 2,400 (3008) transactions per second, which satisfies the peak rate constraint.
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204169192-d6c9b9ef-a47d-4706-afc1-713e8eaecae9.png)
+
+![image](https://user-images.githubusercontent.com/36766101/204169388-b9b1c563-7df6-4679-86a9-2c2b5cc18b98.png)
+
+
+![image](https://user-images.githubusercontent.com/36766101/204170428-36e82478-ec2f-4183-b10f-b6abd8feaf51.png)
+
+![image](https://user-images.githubusercontent.com/36766101/204170912-fcc0fd8c-5094-49d6-9be3-93fe382d157f.png)
+
+
+![image](https://user-images.githubusercontent.com/36766101/204169311-07116b7a-1837-4e87-aae0-306222da1938.png)
+
 
