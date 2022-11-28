@@ -284,3 +284,19 @@ By default, FIFO queues support up to 300 transactions (API calls) per second (3
 ![image](https://user-images.githubusercontent.com/36766101/204169311-07116b7a-1837-4e87-aae0-306222da1938.png)
 
 
+
+![image](https://user-images.githubusercontent.com/36766101/204171116-ec1d98f3-6944-4c48-a85e-2639b6bd3ca8.png)
+Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. Transfer Acceleration takes advantage of Amazon CloudFront’s globally distributed edge locations. As the data arrives at an edge location, data is routed to Amazon S3 over an optimized network path.
+Use multipart uploads for faster file uploads into the destination S3 bucket - Multipart upload allows you to upload a single object as a set of parts. Each part is a contiguous portion of the object's data. You can upload these object parts independently and in any order. If transmission of any part fails, you can retransmit that part without affecting other parts. After all parts of your object are uploaded, Amazon S3 assembles these parts and creates the object. In general, when your object size reaches 100 MB, you should consider using multipart uploads instead of uploading the object in a single operation. Multipart upload provides improved throughput, therefore it facilitates faster file uploads.
+
+![image](https://user-images.githubusercontent.com/36766101/204171453-4b809ee0-4a8c-4441-ae9f-d6162149efbb.png)
+Amazon Kinesis Data Streams (KDS) is a massively scalable and durable real-time data streaming service. KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events. By default, the 2MB/second/shard output is shared between all of the applications consuming data from the stream.
+
+You should use enhanced fan-out if you have multiple consumers retrieving data from a stream in parallel. With enhanced fan-out developers can register stream consumers to use enhanced fan-out and receive their own 2MB/second pipe of read throughput per shard, and this throughput automatically scales with the number of shards in a stream.
+![image](https://user-images.githubusercontent.com/36766101/204171628-0722fb56-ce28-433a-a9b0-3be80b85c57c.png)
+
+
+
+![image](https://user-images.githubusercontent.com/36766101/204176129-bc0d9710-ca97-42cf-a4d1-2d21199be3de.png)
+
+
