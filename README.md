@@ -266,6 +266,10 @@ Create separate cache behaviors for static and dynamic content. Remove the Date 
 
 An e-commerce company wants to rollout and test a blue-green deployment for its global application in the next couple of days. Most of the customers use mobile phones which are prone to DNS caching. The company has only two days left before the big sale will be launched.
 As a Solutions Architect Professional, which of the following options would you suggest to test the deployment on as many users as possible in the given time frame?
+
+
+
+
 A Use Route 53 weighted routing to spread traffic across different deployments
 
 
@@ -328,3 +332,20 @@ You should use enhanced fan-out if you have multiple consumers retrieving data f
 
 
 <img width="754" alt="image" src="https://github.com/user-attachments/assets/83fed198-698a-4238-8c5e-524a58f100af">
+
+
+
+
+
+<img width="765" alt="image" src="https://github.com/user-attachments/assets/aebde5ce-bfad-4d3f-9679-106c9c64cd15">
+
+<img width="758" alt="image" src="https://github.com/user-attachments/assets/3232deba-2108-4f27-bc47-edd3032a3000">
+
+<img width="757" alt="image" src="https://github.com/user-attachments/assets/3f4c531b-3edb-4dab-bbba-6fdae05fd70e">
+
+
+<img width="772" alt="image" src="https://github.com/user-attachments/assets/82dcba8d-40af-4bbb-b7f7-c73f04ae0b91">
+
+
+<img width="765" alt="image" src="https://github.com/user-attachments/assets/7eb9f0e1-06a4-40a1-833a-d20f06fc5c93">
+
