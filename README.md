@@ -362,3 +362,11 @@ You should use enhanced fan-out if you have multiple consumers retrieving data f
 
 
 <img width="773" alt="image" src="https://github.com/user-attachments/assets/7b3af3f4-cbb6-41d8-a9d1-5f86e5d3da3c">
+
+
+<img width="765" alt="image" src="https://github.com/user-attachments/assets/602ff73e-4cf9-4d71-99b3-0fb176aad996">
+<img width="607" alt="image" src="https://github.com/user-attachments/assets/23e87e75-3fd8-4313-94c8-f477e312cbd7">
+
+
+<img width="747" alt="image" src="https://github.com/user-attachments/assets/fbf9705a-fab3-4ae4-9c48-35cd6932eb3d">
+
