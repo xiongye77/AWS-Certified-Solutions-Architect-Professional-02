@@ -260,9 +260,16 @@ Create separate cache behaviors for static and dynamic content. Remove the Date 
 
 
 
+
+
+
+
 An e-commerce company wants to rollout and test a blue-green deployment for its global application in the next couple of days. Most of the customers use mobile phones which are prone to DNS caching. The company has only two days left before the big sale will be launched.
 As a Solutions Architect Professional, which of the following options would you suggest to test the deployment on as many users as possible in the given time frame?
 A Use Route 53 weighted routing to spread traffic across different deployments
+
+
+
 B Use AWS Global Accelerator to distribute a portion of traffic to a particular deployment
 
 <img width="628" alt="image" src="https://github.com/user-attachments/assets/b1ee9a22-4fba-43e6-b22c-739be2d927c5">
