@@ -253,6 +253,23 @@ The combination of DataSync and File Gateway is the correct solution. AWS DataSy
 
 Create separate cache behaviors for static and dynamic content. Remove the Date HTTP header from the whitelist headers section on both of the cache behaviors. Remove the session cookie from the whitelist cookies section for static content as well as the Authorization HTTP header from the whitelist headers section for cache behavior configured for static content
 
+
+
+
+<img width="761" alt="image" src="https://github.com/user-attachments/assets/60327e40-08d9-49e3-9eff-243754b9a8e2">
+
+
+
+An e-commerce company wants to rollout and test a blue-green deployment for its global application in the next couple of days. Most of the customers use mobile phones which are prone to DNS caching. The company has only two days left before the big sale will be launched.
+As a Solutions Architect Professional, which of the following options would you suggest to test the deployment on as many users as possible in the given time frame?
+A Use Route 53 weighted routing to spread traffic across different deployments
+B Use AWS Global Accelerator to distribute a portion of traffic to a particular deployment
+
+<img width="628" alt="image" src="https://github.com/user-attachments/assets/b1ee9a22-4fba-43e6-b22c-739be2d927c5">
+<img width="758" alt="image" src="https://github.com/user-attachments/assets/b7da8b78-1f33-4558-877f-c4b18dc79a5f">
+
+
+
 CloudFront is a web service that speeds up the distribution of your static and dynamic web content by routing each user request through the AWS backbone network to the edge location that can best serve your content.
 
 One of the purposes of using CloudFront is to reduce the number of requests that your origin server must respond to directly. With CloudFront caching, more objects are served from CloudFront edge locations, which are closer to your users. This reduces the load on your origin server and reduces latency. The proportion of requests that are served from caches to all requests is called the cache hit ratio.
@@ -300,3 +317,7 @@ You should use enhanced fan-out if you have multiple consumers retrieving data f
 ![image](https://user-images.githubusercontent.com/36766101/204176129-bc0d9710-ca97-42cf-a4d1-2d21199be3de.png)
 
 
+
+
+
+<img width="754" alt="image" src="https://github.com/user-attachments/assets/83fed198-698a-4238-8c5e-524a58f100af">
