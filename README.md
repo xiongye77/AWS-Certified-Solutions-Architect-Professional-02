@@ -368,5 +368,9 @@ You should use enhanced fan-out if you have multiple consumers retrieving data f
 <img width="607" alt="image" src="https://github.com/user-attachments/assets/23e87e75-3fd8-4313-94c8-f477e312cbd7">
 
 
+
+
+<img width="762" alt="image" src="https://github.com/user-attachments/assets/9662d1ef-04ca-41db-af2a-365b2b18bdb4">
+
 <img width="747" alt="image" src="https://github.com/user-attachments/assets/fbf9705a-fab3-4ae4-9c48-35cd6932eb3d">
 
