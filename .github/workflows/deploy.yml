@@ -3,7 +3,7 @@ name: Deploy Serverless Application
 on:
   push:
     branches:
-      - main
+      - github-action-aoi-gw-lambda-dynamodb
 
 jobs:
   build-deploy:
