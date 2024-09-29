@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - github-action-api-gw-lambda-dynamodb
+permissions:
+  id-token: write  # Required for OIDC authentication
+  contents: read   # Provides access to repository contents
 
 jobs:
   build-deploy:
