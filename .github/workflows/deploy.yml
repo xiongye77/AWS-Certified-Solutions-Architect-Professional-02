@@ -1,0 +1,108 @@
+name: Deploy Serverless Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      # Step 3: Install AWS SAM CLI
+      - name: Install AWS SAM CLI
+        run: |
+          pip install aws-sam-cli
+
+      # Step 4: Configure AWS Credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2  # Replace with your desired region
+
+      # Step 5: Build the SAM application
+      - name: Build SAM Application
+        run: |
+          sam build --template-file infrastructure/template.yaml
+
+      # Step 6: Deploy the SAM application
+      - name: Deploy SAM Application
+        run: |
+          sam deploy \
+            --template-file .aws-sam/build/template.yaml \
+            --stack-name my-serverless-app \
+            --capabilities CAPABILITY_IAM \
+            --no-confirm-changeset
+
+      # Step 7: Run Integration Tests (Optional)
+      - name: Run Integration Tests
+        run: |
+          # Replace with your actual API endpoint
+          API_ENDPOINT=$(sam deploy --query "Outputs.UsersApiURL.Value" --output text --no-cli-pager)
+          
+          # Test Create User
+          CREATE_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST $API_ENDPOINT/users \
+            -H "Content-Type: application/json" \
+            -d '{"UserID": "U1001", "Name": "Alice", "Email": "alice@example.com", "Age": 25}')
+          if [ "$CREATE_RESPONSE" -ne 201 ]; then
+            echo "Create User failed with status code $CREATE_RESPONSE"
+            exit 1
+          fi
+          
+          # Test Get User
+          GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET $API_ENDPOINT/users/U1001)
+          if [ "$GET_RESPONSE" -ne 200 ]; then
+            echo "Get User failed with status code $GET_RESPONSE"
+            exit 1
+          fi
+          
+          # Test Update User
+          UPDATE_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X PUT $API_ENDPOINT/users/U1001 \
+            -H "Content-Type: application/json" \
+            -d '{"Email": "alice.new@example.com", "Age": 26}')
+          if [ "$UPDATE_RESPONSE" -ne 200 ]; then
+            echo "Update User failed with status code $UPDATE_RESPONSE"
+            exit 1
+          fi
+          
+          # Test Delete User
+          DELETE_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X DELETE $API_ENDPOINT/users/U1001)
+          if [ "$DELETE_RESPONSE" -ne 200 ]; then
+            echo "Delete User failed with status code $DELETE_RESPONSE"
+            exit 1
+          fi
+          
+          echo "All integration tests passed successfully."
+
+      # Step 8: Notify on Success (Optional)
+      - name: Notify Success on Slack
+        if: success()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      # Step 9: Notify on Failure (Optional)
+      - name: Notify Failure on Slack
+        if: failure()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
