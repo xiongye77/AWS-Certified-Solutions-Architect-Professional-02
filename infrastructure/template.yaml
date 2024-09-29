@@ -1,0 +1,113 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Serverless application with API Gateway and Lambda functions for CRUD operations on DynamoDB.
+
+Resources:
+
+  UsersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Users
+      AttributeDefinitions:
+        - AttributeName: UserID
+          AttributeType: S
+      KeySchema:
+        - AttributeName: UserID
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST  # On-demand billing
+
+  CreateUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: CreateUserFunction
+      Handler: app.handler
+      Runtime: python3.8
+      CodeUri: ../lambdas/create_user/
+      Description: Creates a new user in DynamoDB
+      MemorySize: 128
+      Timeout: 10
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UsersTable
+      Events:
+        CreateUser:
+          Type: Api
+          Properties:
+            Path: /users
+            Method: post
+            RestApiId: !Ref ApiGateway
+
+  GetUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: GetUserFunction
+      Handler: app.handler
+      Runtime: python3.8
+      CodeUri: ../lambdas/get_user/
+      Description: Retrieves a user from DynamoDB
+      MemorySize: 128
+      Timeout: 10
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref UsersTable
+      Events:
+        GetUser:
+          Type: Api
+          Properties:
+            Path: /users/{UserID}
+            Method: get
+            RestApiId: !Ref ApiGateway
+
+  UpdateUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: UpdateUserFunction
+      Handler: app.handler
+      Runtime: python3.8
+      CodeUri: ../lambdas/update_user/
+      Description: Updates a user in DynamoDB
+      MemorySize: 128
+      Timeout: 10
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UsersTable
+      Events:
+        UpdateUser:
+          Type: Api
+          Properties:
+            Path: /users/{UserID}
+            Method: put
+            RestApiId: !Ref ApiGateway
+
+  DeleteUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: DeleteUserFunction
+      Handler: app.handler
+      Runtime: python3.8
+      CodeUri: ../lambdas/delete_user/
+      Description: Deletes a user from DynamoDB
+      MemorySize: 128
+      Timeout: 10
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref UsersTable
+      Events:
+        DeleteUser:
+          Type: Api
+          Properties:
+            Path: /users/{UserID}
+            Method: delete
+            RestApiId: !Ref ApiGateway
+
+  ApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: UsersApi
+      StageName: Prod
+      EndpointConfiguration: REGIONAL
+      Cors:
+        AllowMethods: "'OPTIONS,POST,GET,PUT,DELETE'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
+        AllowOrigin: "'*'"
