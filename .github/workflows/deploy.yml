@@ -44,6 +44,7 @@ jobs:
       - name: Deploy SAM Application
         run: |
           sam deploy \
+            --resolve-s3 \
             --template-file .aws-sam/build/template.yaml \
             --stack-name my-serverless-app \
             --capabilities CAPABILITY_IAM \
