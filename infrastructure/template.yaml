@@ -22,7 +22,7 @@ Resources:
     Properties:
       FunctionName: CreateUserFunction
       Handler: app.handler
-      Runtime: python3.8
+      Runtime: python3.10
       CodeUri: ../lambdas/create_user/
       Description: Creates a new user in DynamoDB
       MemorySize: 128
@@ -43,7 +43,7 @@ Resources:
     Properties:
       FunctionName: GetUserFunction
       Handler: app.handler
-      Runtime: python3.8
+      Runtime: python3.10
       CodeUri: ../lambdas/get_user/
       Description: Retrieves a user from DynamoDB
       MemorySize: 128
@@ -64,7 +64,7 @@ Resources:
     Properties:
       FunctionName: UpdateUserFunction
       Handler: app.handler
-      Runtime: python3.8
+      Runtime: python3.10
       CodeUri: ../lambdas/update_user/
       Description: Updates a user in DynamoDB
       MemorySize: 128
@@ -85,7 +85,7 @@ Resources:
     Properties:
       FunctionName: DeleteUserFunction
       Handler: app.handler
-      Runtime: python3.8
+      Runtime: python3.10
       CodeUri: ../lambdas/delete_user/
       Description: Deletes a user from DynamoDB
       MemorySize: 128
