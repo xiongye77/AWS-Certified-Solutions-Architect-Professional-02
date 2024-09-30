@@ -43,12 +43,33 @@ jobs:
       # Step 6: Deploy the SAM application
       - name: Deploy SAM Application
         run: |
-          sam deploy \
-            --resolve-s3 \
-            --template-file .aws-sam/build/template.yaml \
-            --stack-name my-serverless-app \
-            --capabilities CAPABILITY_IAM \
-            --no-confirm-changeset
+          STACK_NAME=my-serverless-app
+          aws cloudformation describe-stacks --stack-name $STACK_NAME || STACK_EXISTS=$?
+          if [ "$STACK_EXISTS" -ne 0 ]; then
+            echo "Stack does not exist, deploying..."
+            sam deploy \
+              --resolve-s3 \
+              --template-file .aws-sam/build/template.yaml \
+              --stack-name my-serverless-app \
+              --capabilities CAPABILITY_IAM \
+              --no-confirm-changeset
+          fi
+
+      - name: Check for rollback status
+        id: check_rollback
+        run: |
+          STACK_NAME=my-serverless-app
+          STACK_STATUS=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --query "Stacks[0].StackStatus" --output text)
+          echo "Stack status: $STACK_STATUS"
+          echo "::set-output name=status::$STACK_STATUS"
+        continue-on-error: true
+
+      - name: Delete rollbacked stack
+        if: steps.check_rollback.outputs.status == 'ROLLBACK_COMPLETE' || steps.check_rollback.outputs.status == 'ROLLBACK_FAILED'
+        run: |
+          STACK_NAME=my-serverless-app
+          echo "Deleting stack in ROLLBACK status: $STACK_NAME"
+          aws cloudformation delete-stack --stack-name $STACK_NAME
 
       # Step 7: Run Integration Tests (Optional)
       - name: Run Integration Tests
