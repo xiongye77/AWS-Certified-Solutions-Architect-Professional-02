@@ -46,14 +46,19 @@ jobs:
           STACK_NAME=my-serverless-app
           aws cloudformation describe-stacks --stack-name $STACK_NAME || STACK_EXISTS=$?
           if [ "$STACK_EXISTS" -ne 0 ]; then
-            echo "Stack does not exist, deploying..."
+            echo "Stack does not exist. Creating new stack: $STACK_NAME"
             sam deploy \
-              --resolve-s3 \
-              --template-file .aws-sam/build/template.yaml \
-              --stack-name my-serverless-app \
-              --capabilities CAPABILITY_IAM \
-              --no-confirm-changeset
-          fi
+              --stack-name $STACK_NAME \
+              --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
+              --no-confirm-changeset \
+              --no-fail-on-empty-changeset
+          else
+            echo "Stack exists. Updating stack: $STACK_NAME"
+            sam deploy \
+              --stack-name $STACK_NAME \
+              --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
+              --no-confirm-changeset \
+              --no-fail-on-empty-changeset
 
       - name: Check for rollback status
         id: check_rollback
