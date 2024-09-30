@@ -121,9 +121,12 @@ jobs:
           fi
 
           # Add user again for demo purpose 
-          GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET $API_ENDPOINT/users/U1001)
-          if [ "$GET_RESPONSE" -ne 200 ]; then
-            echo "Get User failed with status code $GET_RESPONSE"
+          
+          CREATE_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST $API_ENDPOINT/users \
+            -H "Content-Type: application/json" \
+            -d '{"UserID": "U1001", "Name": "Alice", "Email": "alice@example.com", "Age": "25"}')
+          if [ "$CREATE_RESPONSE" -ne 201 ]; then
+            echo "Create User failed with status code $CREATE_RESPONSE"
             exit 1
           fi
           
