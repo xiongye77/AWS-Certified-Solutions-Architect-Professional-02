@@ -119,6 +119,13 @@ jobs:
             echo "Delete User failed with status code $DELETE_RESPONSE"
             exit 1
           fi
+
+          # Add user again for demo purpose 
+          GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET $API_ENDPOINT/users/U1001)
+          if [ "$GET_RESPONSE" -ne 200 ]; then
+            echo "Get User failed with status code $GET_RESPONSE"
+            exit 1
+          fi
           
           echo "All integration tests passed successfully."
 
