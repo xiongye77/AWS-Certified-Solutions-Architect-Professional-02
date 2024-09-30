@@ -86,7 +86,7 @@ jobs:
       - name: Run Integration Tests
         run: |
           # Replace with your actual API endpoint
-          API_ENDPOINT=$(sam deploy --query "Outputs.UsersApiURL.Value" --output text --no-cli-pager)
+          API_ENDPOINT=$(aws cloudformation describe-stacks --stack-name my-serverless-app --query "Stacks[0].Outputs[?OutputKey=='UsersApiURL'].OutputValue" --output text)
           
           # Test Create User
           CREATE_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST $API_ENDPOINT/users \
