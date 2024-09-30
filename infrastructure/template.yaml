@@ -111,3 +111,6 @@ Resources:
         AllowMethods: "'OPTIONS,POST,GET,PUT,DELETE'"
         AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
         AllowOrigin: "'*'"
+Outputs:
+  UsersApiURL:
+    Value: !Sub "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
