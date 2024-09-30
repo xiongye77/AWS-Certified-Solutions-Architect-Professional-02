@@ -154,15 +154,8 @@ Resources:
           CachedMethods:
             - GET
             - HEAD
-          ForwardedValues:
-            QueryString: true  # Forward query strings to the API Gateway
-            Cookies:
-              Forward: none    # You can forward 'none' or 'all', or specific cookies (not common for API Gateway)
-            Headers:           # Specify headers that need to be forwarded (Authorization is common for APIs)
-              - Authorization
-              - Host              # Forward the Host header to API Gateway if required
-            QueryStringCacheKeys:   # Cache responses based on query strings
-              - userId           # Add specific query strings if caching needs to consider them
+          CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad   
+          OriginRequestPolicyId: b689b0a8-53d0-40ab-baf2-68738e2966ac
         DefaultRootObject: ""
         ViewerCertificate:
           CloudFrontDefaultCertificate: true
@@ -170,7 +163,9 @@ Resources:
         PriceClass: PriceClass_100
         #WebACLId: !Ref MyWebACL
   
+
   
+
               
  
 
