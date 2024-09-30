@@ -49,6 +49,8 @@ jobs:
             echo "Stack does not exist. Creating new stack: $STACK_NAME"
             sam deploy \
               --stack-name $STACK_NAME \
+              --resolve-s3 \
+              --template-file .aws-sam/build/template.yaml \
               --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
               --no-confirm-changeset \
               --no-fail-on-empty-changeset
@@ -56,6 +58,8 @@ jobs:
             echo "Stack exists. Updating stack: $STACK_NAME"
             sam deploy \
               --stack-name $STACK_NAME \
+              --resolve-s3 \
+              --template-file .aws-sam/build/template.yaml \
               --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
               --no-confirm-changeset \
               --no-fail-on-empty-changeset
