@@ -111,6 +111,68 @@ Resources:
         AllowMethods: "'OPTIONS,POST,GET,PUT,DELETE'"
         AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
         AllowOrigin: "'*'"
+
+        
+  MyCloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !Sub "${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com"
+            Id: ApiOrigin
+            CustomOriginConfig:
+              OriginProtocolPolicy: https-only
+        Enabled: true
+        DefaultCacheBehavior:
+          TargetOriginId: ApiOrigin
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods: 
+            - GET
+            - HEAD
+          CachedMethods:
+            - GET
+            - HEAD
+        DefaultRootObject: ""
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+        HttpVersion: http2
+        PriceClass: PriceClass_100
+
+  
+  MyWebACL:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      DefaultAction:
+        Allow: {}
+      Scope: CLOUDFRONT
+      VisibilityConfig:
+        CloudWatchMetricsEnabled: true
+        MetricName: MyWAF
+        SampledRequestsEnabled: true
+      Rules:
+        - Name: BlockBadRequests
+          Priority: 1
+          Action:
+            Block: {}
+          VisibilityConfig:
+            CloudWatchMetricsEnabled: true
+            MetricName: BlockBadRequests
+            SampledRequestsEnabled: true
+          Statement:
+            RateBasedStatement:
+              Limit: 2000
+              AggregateKeyType: IP
+              
+ 
+  CloudFrontWAFAssociation:
+    Type: AWS::WAFv2::WebACLAssociation
+    Properties: 
+      ResourceArn: !GetAtt MyCloudFrontDistribution.ARN
+      WebACLArn: !Ref MyWebACL
+
 Outputs:
+  CloudFrontURL:
+    Description: "The URL of the CloudFront distribution"
+    Value: !GetAtt MyCloudFrontDistribution.DomainName
   UsersApiURL:
     Value: !Sub "https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
