@@ -111,7 +111,29 @@ Resources:
         AllowMethods: "'OPTIONS,POST,GET,PUT,DELETE'"
         AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
         AllowOrigin: "'*'"
-
+  MyWebACL:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      DefaultAction:
+        Allow: {}
+      Scope: CLOUDFRONT
+      VisibilityConfig:
+        CloudWatchMetricsEnabled: true
+        MetricName: MyWAF
+        SampledRequestsEnabled: true
+      Rules:
+        - Name: BlockBadRequests
+          Priority: 1
+          Action:
+            Block: {}
+          VisibilityConfig:
+            CloudWatchMetricsEnabled: true
+            MetricName: BlockBadRequests
+            SampledRequestsEnabled: true
+          Statement:
+            RateBasedStatement:
+              Limit: 2000
+              AggregateKeyType: IP
         
   MyCloudFrontDistribution:
     Type: AWS::CloudFront::Distribution
@@ -146,38 +168,12 @@ Resources:
           CloudFrontDefaultCertificate: true
         HttpVersion: http2
         PriceClass: PriceClass_100
-
+        WebACLId: !Ref MyWebACL
   
-  MyWebACL:
-    Type: AWS::WAFv2::WebACL
-    Properties:
-      DefaultAction:
-        Allow: {}
-      Scope: CLOUDFRONT
-      VisibilityConfig:
-        CloudWatchMetricsEnabled: true
-        MetricName: MyWAF
-        SampledRequestsEnabled: true
-      Rules:
-        - Name: BlockBadRequests
-          Priority: 1
-          Action:
-            Block: {}
-          VisibilityConfig:
-            CloudWatchMetricsEnabled: true
-            MetricName: BlockBadRequests
-            SampledRequestsEnabled: true
-          Statement:
-            RateBasedStatement:
-              Limit: 2000
-              AggregateKeyType: IP
+  
               
  
-  CloudFrontWAFAssociation:
-    Type: AWS::WAFv2::WebACLAssociation
-    Properties: 
-      ResourceArn: !GetAtt MyCloudFrontDistribution.ARN
-      WebACLArn: !Ref MyWebACL
+
 
 Outputs:
   CloudFrontURL:
