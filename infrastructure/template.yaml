@@ -161,7 +161,7 @@ Resources:
           CloudFrontDefaultCertificate: true
         HttpVersion: http2
         PriceClass: PriceClass_100
-        #WebACLId: !Ref MyWebACL
+        WebACLId: !GetAtt MyWAFWebACL.Arn
   
 
   
