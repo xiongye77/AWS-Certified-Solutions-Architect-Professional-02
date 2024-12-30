@@ -1,4 +1,16 @@
 # AWS-Certified-Solutions-Architect-Professional-02
+<img width="1456" alt="image" src="https://github.com/user-attachments/assets/0640b427-6373-479b-9287-56698e477ec7" />
+CE
+
+<img width="1442" alt="image" src="https://github.com/user-attachments/assets/9dacdc7c-0a1a-46ec-ad02-7367b72133cc" />
+????????
+
+<img width="1115" alt="image" src="https://github.com/user-attachments/assets/481deab2-a3bd-4ff3-becd-1631332c2480" />
+
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/341fb354-5b01-416c-aaa8-b23b1dd98a3e" />
+
+
+
 
 
 ![image](https://user-images.githubusercontent.com/36766101/204118816-da3ef40b-633b-4a31-aed0-79b2e052e0ad.png)
