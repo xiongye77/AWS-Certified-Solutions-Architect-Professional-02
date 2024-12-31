@@ -1,4 +1,30 @@
 # AWS-Certified-Solutions-Architect-Professional-02
+2024-12-31
+
+<img width="1124" alt="image" src="https://github.com/user-attachments/assets/277d6593-8116-4d82-b442-46b8d5af3959" />
+<img width="768" alt="image" src="https://github.com/user-attachments/assets/c7d74b07-b5e3-4497-a6cd-60095fd57909" />
+<img width="613" alt="image" src="https://github.com/user-attachments/assets/fa598c4b-0253-4fb0-963f-8809d6849512" />
+
+
+
+<img width="1126" alt="image" src="https://github.com/user-attachments/assets/620fdc44-c796-4fea-a430-9c5d99ba646e" />
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/febd9231-2e8e-4d12-a1f1-7e98f3bd605a" />
+<img width="669" alt="image" src="https://github.com/user-attachments/assets/bb2e50ad-cdb3-4d46-aea3-6c3f4f68a421" />
+
+
+
+<img width="1115" alt="image" src="https://github.com/user-attachments/assets/ebdca573-cf40-4135-a6dc-908194f33a97" />
+<img width="779" alt="image" src="https://github.com/user-attachments/assets/23873849-0fd0-4692-a184-3462872d9505" />
+<img width="699" alt="image" src="https://github.com/user-attachments/assets/6ffe0d5a-c6d1-45a2-803c-22a6ff0c440e" />
+
+
+<img width="1168" alt="image" src="https://github.com/user-attachments/assets/87d2013f-693b-4d4d-b5ff-c7476cde110a" />
+
+
+
+
+
+
 <img width="1456" alt="image" src="https://github.com/user-attachments/assets/0640b427-6373-479b-9287-56698e477ec7" />
 CE
 
