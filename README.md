@@ -1,6 +1,47 @@
 # AWS-Certified-Solutions-Architect-Professional-02
 2024-12-31
 
+<img width="1126" alt="image" src="https://github.com/user-attachments/assets/28cad676-837b-4b21-b08f-4d87b903cbe2" />
+CCCCCCC or AAAAAAAA (chatgpt)
+
+
+
+<img width="1119" alt="image" src="https://github.com/user-attachments/assets/f3965b3d-a0c2-4c90-931d-2a0858f3d826" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/264372b2-8185-41d1-af53-df446dee9e8c" />
+
+
+
+<img width="1126" alt="image" src="https://github.com/user-attachments/assets/15ce9574-e628-42f4-8afe-680d26c50c91" />
+
+
+
+<img width="1113" alt="image" src="https://github.com/user-attachments/assets/fb8198cb-3cde-4e07-b4db-ec258ddf22a4" />
+BEF or AEF 
+
+
+<img width="1443" alt="image" src="https://github.com/user-attachments/assets/92cf1c4b-0ca0-41c4-83ca-4629073d17c2" />
+B 
+<img width="832" alt="image" src="https://github.com/user-attachments/assets/c95f4717-1ed6-4918-a892-18d7ddbb5c54" />
+
+
+<img width="1124" alt="image" src="https://github.com/user-attachments/assets/a7365ba6-cda9-4947-9df0-e4248f9786a0" />
+
+
+
+
+<img width="1141" alt="image" src="https://github.com/user-attachments/assets/31d39a19-bb77-4a58-a16f-02591324dedb" />
+<img width="733" alt="image" src="https://github.com/user-attachments/assets/018fa6c9-8faa-4332-9ebc-af1b9045fd21" />
+
+
+<img width="1117" alt="image" src="https://github.com/user-attachments/assets/d42d7ed2-9df3-4c5d-8d62-abd25b693197" />
+<img width="707" alt="image" src="https://github.com/user-attachments/assets/4851a1e7-67a2-4838-bf3d-b07c30f79f74" />
+
+
+<img width="1145" alt="image" src="https://github.com/user-attachments/assets/c98edcaf-b218-460a-b85d-2a2c23db2268" />
+<img width="735" alt="image" src="https://github.com/user-attachments/assets/383984d9-f0b4-4c65-9e0d-70adb43e8aff" />
+<img width="637" alt="image" src="https://github.com/user-attachments/assets/9255cbb3-9eec-4c08-849a-318c06c8d8ff" />
+
+
 <img width="1124" alt="image" src="https://github.com/user-attachments/assets/277d6593-8116-4d82-b442-46b8d5af3959" />
 <img width="768" alt="image" src="https://github.com/user-attachments/assets/c7d74b07-b5e3-4497-a6cd-60095fd57909" />
 <img width="613" alt="image" src="https://github.com/user-attachments/assets/fa598c4b-0253-4fb0-963f-8809d6849512" />
