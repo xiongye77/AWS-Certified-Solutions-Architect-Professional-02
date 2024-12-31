@@ -1,6 +1,25 @@
 # AWS-Certified-Solutions-Architect-Professional-02
 2024-12-31
 
+<img width="1119" alt="image" src="https://github.com/user-attachments/assets/b9195ce3-3f7b-426a-81e0-1f6ad8ed8ac4" />
+
+
+<img width="1140" alt="image" src="https://github.com/user-attachments/assets/36126690-1122-4e07-92f6-f8e531bcc81a" />
+maybe BE ?
+
+
+<img width="1134" alt="image" src="https://github.com/user-attachments/assets/94252c1c-d775-4594-877b-3c8db2fa5d20" />
+<img width="696" alt="image" src="https://github.com/user-attachments/assets/7380d573-3684-413a-ab79-1800c20e2373" />
+
+
+
+<img width="1127" alt="image" src="https://github.com/user-attachments/assets/b7843112-ab2e-43a1-85d6-4687a09250f5" />
+
+
+<img width="1130" alt="image" src="https://github.com/user-attachments/assets/ef59892f-95f4-407b-8e4b-5802c72a8224" />
+![image](https://github.com/user-attachments/assets/2e26ce05-854f-41e6-a888-1651edbefbc4)
+
+
 <img width="1126" alt="image" src="https://github.com/user-attachments/assets/28cad676-837b-4b21-b08f-4d87b903cbe2" />
 CCCCCCC or AAAAAAAA (chatgpt)
 
