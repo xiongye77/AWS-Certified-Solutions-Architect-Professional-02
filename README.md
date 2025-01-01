@@ -1,4 +1,90 @@
 # AWS-Certified-Solutions-Architect-Professional-02
+
+2025-01-01
+
+<img width="1451" alt="image" src="https://github.com/user-attachments/assets/b0cce13b-b72e-45e5-bed0-62f2b76f99a2" />
+<img width="762" alt="image" src="https://github.com/user-attachments/assets/00bde9bb-2cfa-48e0-89b7-1ea54cb06220" />
+
+
+
+<img width="1434" alt="image" src="https://github.com/user-attachments/assets/27210dac-6b7f-45b7-a54f-642eecd99620" />
+<img width="767" alt="image" src="https://github.com/user-attachments/assets/d4162330-7844-41ef-9dd4-84be5b3a21bb" />
+
+
+
+<img width="1453" alt="image" src="https://github.com/user-attachments/assets/366a3064-dc3e-439d-9a6d-60846033d1fc" />
+AB or AD 
+
+
+
+<img width="1122" alt="image" src="https://github.com/user-attachments/assets/38c0451d-2639-4b03-93f0-7900d28e27b5" />
+
+
+<img width="1110" alt="image" src="https://github.com/user-attachments/assets/88609557-ec86-4e20-ac61-c6c3599c91b0" />
+
+
+<img width="1118" alt="image" src="https://github.com/user-attachments/assets/4fa30a33-186d-43d2-8e34-76f84a06e381" />
+![image](https://github.com/user-attachments/assets/12b17d87-d63a-4be5-b402-884dad07da9e)
+<img width="711" alt="image" src="https://github.com/user-attachments/assets/037c487a-ad69-4565-a262-a6bfd9031b4d" />
+
+
+<img width="1152" alt="image" src="https://github.com/user-attachments/assets/837d4f40-a692-4449-b330-2f0ee6a18ac0" />
+
+
+<img width="1461" alt="image" src="https://github.com/user-attachments/assets/4facaf7f-aa26-47f9-ad55-d0910c209308" />
+ACE 
+
+<img width="1463" alt="image" src="https://github.com/user-attachments/assets/00923175-e221-4eb0-b05b-6d8082606d56" />
+
+
+<img width="1444" alt="image" src="https://github.com/user-attachments/assets/e314bed1-31ac-445f-abe3-33571dedf75f" />
+
+
+
+
+<img width="1123" alt="image" src="https://github.com/user-attachments/assets/95c26bf2-98ea-406f-9f31-67bf9a268730" />
+
+<img width="1436" alt="image" src="https://github.com/user-attachments/assets/f268abed-be03-4986-ae11-ec07e82a481e" />
+
+
+<img width="1462" alt="image" src="https://github.com/user-attachments/assets/6ce9a4cd-26db-48db-9439-458396d932f8" />
+
+<img width="1142" alt="image" src="https://github.com/user-attachments/assets/ab255c77-a3b3-48c7-bc26-6223adfa695b" />
+ADE or ABE 
+
+
+<img width="1113" alt="image" src="https://github.com/user-attachments/assets/405906f5-0c25-40e7-a035-60bf88af7c41" />
+AAAAAAAAAA or CCCCCCCCCCC
+
+
+
+<img width="1128" alt="image" src="https://github.com/user-attachments/assets/95aba24c-32cb-4e74-9561-733859e5677a" />
+
+
+<img width="1156" alt="image" src="https://github.com/user-attachments/assets/337d0ead-128c-4f21-91c0-e2490968b611" />
+
+
+<img width="1441" alt="image" src="https://github.com/user-attachments/assets/f0accfcd-aa30-458f-b669-c28254e48e7c" />
+<img width="848" alt="image" src="https://github.com/user-attachments/assets/edf6d61f-a653-4918-ac05-5320887ce4b6" />
+
+
+<img width="1123" alt="image" src="https://github.com/user-attachments/assets/f7373e2a-b30a-4a76-b81b-cd05ae1fd05f" />
+
+
+
+
+<img width="1124" alt="image" src="https://github.com/user-attachments/assets/fb42aeaf-cf3c-4754-9be7-c4aaab1f712f" />
+
+
+
+<img width="1125" alt="image" src="https://github.com/user-attachments/assets/a27676f9-146e-4c9d-ba80-f2b411847aca" />
+<img width="624" alt="image" src="https://github.com/user-attachments/assets/751fa0d5-4d16-4e8c-bfe2-5b1dac308bf6" />
+
+
+<img width="1160" alt="image" src="https://github.com/user-attachments/assets/b1aa7a7c-4341-47ba-8a41-c8c58a6963f2" />
+<img width="647" alt="image" src="https://github.com/user-attachments/assets/afff8cfc-7b53-4068-bbae-e54a5e9bd958" />
+
+
 2024-12-31
 
 <img width="1119" alt="image" src="https://github.com/user-attachments/assets/b9195ce3-3f7b-426a-81e0-1f6ad8ed8ac4" />
