@@ -2,6 +2,10 @@
 
 2025-01-01
 
+<img width="1145" alt="image" src="https://github.com/user-attachments/assets/0242a0c8-074a-4b42-8286-2d11a2775d40" />
+<img width="820" alt="image" src="https://github.com/user-attachments/assets/57712b74-ed34-4d6d-af53-82247f93ce4b" />
+
+
 <img width="1451" alt="image" src="https://github.com/user-attachments/assets/b0cce13b-b72e-45e5-bed0-62f2b76f99a2" />
 <img width="762" alt="image" src="https://github.com/user-attachments/assets/00bde9bb-2cfa-48e0-89b7-1ea54cb06220" />
 
